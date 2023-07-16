@@ -38,7 +38,7 @@ Question: {question}
 Answer:"""
 prompt = PromptTemplate(template=prompt_template, input_variables=["context", "question"])
 
-# initialize hte LLM & Embeddings
+# initialize the LLM & Embeddings
 llm = LlamaCpp(model_path="./models/llama-7b.ggmlv3.q4_0.bin")
 embeddings = LlamaCppEmbeddings(model_path="models/llama-7b.ggmlv3.q4_0.bin")
 llm_chain = LLMChain(llm=llm, prompt=prompt)
